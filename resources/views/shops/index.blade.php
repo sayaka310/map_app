@@ -10,6 +10,11 @@
             <li><a href="{{ route('shops.show', $shop) }}">{{ $shop->name }}</a></li>
         @endforeach
     </ul>
+    <div id="map" style="height:50vh;"></div>
 
     <a href="{{ route('shops.create') }}">create</a>
+@endsection
+
+@section('script')
+    @include('partial.map')
 @endsection

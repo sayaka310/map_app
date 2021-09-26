@@ -18,6 +18,7 @@
             <label for="address">住所:</label>
             <input type="text" name="address" id="address" value="{{ $shop->address }}" >
         </div>
+        <div id="map" style="height:50vh;"></div>
     </form>
 
     <a href="{{ route('shops.index') }}">一覧画面</a>
@@ -27,4 +28,8 @@
         @method('delete')
         <button type="submit" onclick="if(!confirm('削除していいですか?')){return false}">削除する</button>
     </form>
+@endsection
+
+@section('script')
+    @include('partial.map')
 @endsection
