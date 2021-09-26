@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 
+
 class ShopController extends Controller
 {
     /**
@@ -39,14 +40,13 @@ class ShopController extends Controller
     {
         $shop = new Shop();
 
-        $shop->name = $request->name;
-        $shop->description = $request->description;
-        $shop->address = $request->address;
-        $shop->latitude = $request->latitude;
-        $shop->longitude = $request->longitude;
-
+        // $shop->name = $request->name;
+        // $shop->description = $request->description;
+        // $shop->address = $request->address;
+        // $shop->latitude = $request->latitude;
+        // $shop->longitude = $request->longitude;
+        $shop->fill($request->all());
         $shop->save();
-
         return redirect()->route('shops.index');
         
         // return view('shops.show');
@@ -83,14 +83,14 @@ class ShopController extends Controller
      */
     public function update(Request $request, Shop $shop)
     {
-        $shop->name = $request->name;
-        $shop->description = $request->description;
-        $shop->address = $request->address;
-        $shop->latitude = $request->latitude;
-        $shop->longitude = $request->longitude;
+        // $shop->name = $request->name;
+        // $shop->description = $request->description;
+        // $shop->address = $request->address;
+        // $shop->latitude = $request->latitude;
+        // $shop->longitude = $request->longitude;
 
+        $shop->fill($request->all());
         $shop->save();
-
         return redirect()->route('shops.index');
     }
 

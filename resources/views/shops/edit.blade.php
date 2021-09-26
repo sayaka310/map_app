@@ -5,18 +5,18 @@
 @section('content')
     <h1>店舗情報修正</h1>
 
-    <form>
+    <form action={{ route('shops.update', $shop) }}" mesod =post">
         <div>
             <label for="name">店舗名:</label>
-            <input type="text" name="name" id="name" value="{{ $shop->name }}" readonly>
+            <input type="text" name="name" id="name" value="{{ $shop->name }}" >
         </div>
         <div>
             <label for="description">詳細:</label>
-            <textarea name="description" id="description" cols="30" rows="10" readonly>{{ $shop->description }}</textarea>
+            <textarea name="description" id="description" cols="30" rows="10">{{ $shop->description }}</textarea>
         </div>
         <div>
             <label for="address">住所:</label>
-            <input type="text" name="address" id="address" value="{{ $shop->address }}" readonly>
+            <input type="text" name="address" id="address" value="{{ $shop->address }}" >
         </div>
     </form>
 
