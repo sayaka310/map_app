@@ -33,9 +33,11 @@ class ShopController extends Controller
     {
         // 最初に表示したい座標(今回は東京タワー)
         $latitude = 35.658584;
-        $longitude  10;
+        $longitude = 139.7454316;
+        $zoom = 10;
 
         return view('shops.create', compact('latitude', 'longitude', 'zoom'));
+    
     }
 
     /**
@@ -56,7 +58,7 @@ class ShopController extends Controller
         $shop->fill($request->all());
         $shop->save();
         return redirect()->route('shops.index');
-
+        
         // return view('shops.show');
     }
 
@@ -86,10 +88,9 @@ class ShopController extends Controller
         $latitude = $shop->latitude;
         $longitude = $shop->longitude;
         $zoom = 12;
-
-        return view('shops.edit', compact('shop', 'latitude', 'longitude', 'zoom'));
+        
+        return view('shops.edit', compact('shop'));
     }
-
 
     /**
      * Update the specified resource in storage.
